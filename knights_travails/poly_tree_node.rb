@@ -7,7 +7,6 @@ class PolyTreeNode
     @children = []
   end
 
-  # "does not add the same node twice"
   def parent=(node)
     old_parent = parent
     @parent = node

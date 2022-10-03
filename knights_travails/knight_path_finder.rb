@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'poly_tree_node'
 
 class KnightPathFinder
@@ -49,28 +51,17 @@ class KnightPathFinder
   end
 
   def find_path(end_pos)
-
     found_node = root_node.bfs(end_pos)
     trace_path_back(found_node)
-
   end
 
   def trace_path_back(node)
-
     return [node.value] if node.parent.nil?
 
     trace_path_back(node.parent).push(node.value)
-
   end
-
 end
 
 knight = KnightPathFinder.new([0, 0])
-
-# p knight
-# p knight.considered_positions
-# p knight.new_move_positions([0, 0])
-# p knight.considered_positions
-p knight.find_path([7,6])
-p knight.find_path([6,2])
-p 
+p knight.find_path([7, 6])
+p knight.find_path([6, 2])
